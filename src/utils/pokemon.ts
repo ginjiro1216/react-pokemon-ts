@@ -8,12 +8,12 @@ export const fetchAllPokemon = (url: string): Promise<FetchPokemonData> => {
   });
 };
 
-export const getPokemon = (url: string) => {
+// todo promiseの方がおかしい
+export const getPokemon = (url: string): Promise<string> => {
   return new Promise((resolve, reject) => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         resolve(data);
       });
   });
